@@ -1,0 +1,34 @@
+<!--
+  Neon Persona — Chat Box exclusivo para Twitch no Streamlabs.
+  Criado por Leonardo do Guia do Streamer com ajuda de IA.
+  Identificador de autoria: GDS-NP-2026-4C1A7E
+
+  Uso gratuito conforme LICENSE.txt. Não redistribua, revenda, faça reupload
+  nem apresente este material como criação própria.
+-->
+
+<!-- A Streamlabs insere as mensagens recebidas dentro deste elemento. -->
+<div id="log" class="sl__chat__layout" data-np-k="4c1a7e"></div>
+
+<!--
+  Template nativo do Chat Box.
+  Mantenha {from}, {messageId}, {color}, {message} e .badges como estão:
+  são os pontos usados pela Streamlabs para montar cada mensagem.
+-->
+<script type="text/template" id="chatlist_item">
+  <div class="chat-entry" data-from="{from}" data-id="{messageId}">
+    <div class="avatar-wrap" aria-hidden="true">
+      <img class="avatar-image" alt="" decoding="async">
+      <span class="avatar-fallback">?</span>
+    </div>
+
+    <div class="chat-card">
+      <div class="chat-header">
+        <span class="name" style="color: {color}">{from}</span>
+        <span class="badges"></span>
+      </div>
+
+      <div class="message">{message}</div>
+    </div>
+  </div>
+</script>

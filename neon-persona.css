@@ -1,0 +1,349 @@
+/*
+ * Neon Persona — Chat Box exclusivo para Twitch.
+ * Criado por Leonardo do Guia do Streamer com ajuda de IA.
+ * Identificador de autoria: GDS-NP-2026-4C1A7E
+ *
+ * Uso gratuito conforme LICENSE.txt. Não redistribua, revenda, faça reupload
+ * nem apresente este material como criação própria.
+ */
+
+:root {
+  --np-k: 4c1a7e;
+
+  /* ================================================================
+     PERSONALIZE SEU CHAT AQUI
+     Altere somente os valores abaixo para criar a sua combinação.
+     ================================================================ */
+
+  /*
+   * COR PRINCIPAL — troque somente esta linha para mudar o tema inteiro.
+   * Roxo: #a970ff | Rosa: #ff3bd4 | Azul: #32b7ff | Verde: #52e89b
+   */
+  --cor-principal: #a970ff;
+
+  /* Cores avançadas — normalmente não é necessário alterar. */
+  --cor-borda: var(--cor-principal);
+  --cor-glow: var(--cor-principal);
+  --fundo-card: rgba(10, 12, 20, 0.88);
+  --cor-mensagem: #f7f5ff;
+  --cor-fallback: #d8c5ff;
+
+  /* Avatar e card */
+  --tamanho-avatar: 48px;
+  --raio-avatar: 50%;
+  --raio-card: 14px;
+  --espessura-borda: 1px;
+  --largura-maxima-chat: 540px;
+
+  /* Textos */
+  --tamanho-nome: 17px;
+  --tamanho-mensagem: 18px;
+
+  /* Glow */
+  --intensidade-glow: 14px;
+
+  /* Espaçamentos */
+  --espaco-entre-mensagens: 10px;
+  --espacamento-card-vertical: 10px;
+  --espacamento-card-horizontal: 15px;
+  --encaixe-avatar: 12px;
+  --espaco-nome-mensagem: 4px;
+
+  /* Ajustes opcionais */
+  --largura-badge: 18px;
+  --desfoque-fundo: 14px;
+}
+
+/* Não é necessário editar abaixo desta linha. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+body {
+  color: var(--cor-mensagem);
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+#log {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  max-height: 100%;
+  padding: calc(var(--intensidade-glow) + 5px);
+  overflow: hidden;
+}
+
+#log > .chat-entry {
+  --user-color: var(--cor-borda);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: min(100%, var(--largura-maxima-chat));
+  margin-top: var(--espaco-entre-mensagens);
+  transform-origin: left bottom;
+  will-change: transform, opacity;
+  animation:
+    np-enter 460ms cubic-bezier(0.2, 0.9, 0.25, 1.15) both,
+    np-exit 420ms ease {message_hide_delay} forwards;
+}
+
+.chat-card {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 auto;
+  min-width: 190px;
+  min-height: var(--tamanho-avatar);
+  max-width: calc(var(--largura-maxima-chat) - var(--tamanho-avatar) + var(--encaixe-avatar));
+  padding:
+    var(--espacamento-card-vertical)
+    var(--espacamento-card-horizontal)
+    var(--espacamento-card-vertical)
+    calc(var(--espacamento-card-horizontal) + var(--encaixe-avatar));
+  overflow: hidden;
+  border: var(--espessura-borda) solid var(--cor-borda);
+  border-radius: var(--raio-card);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), transparent 48%),
+    var(--fundo-card);
+  box-shadow:
+    0 0 var(--intensidade-glow) var(--cor-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 12px 30px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(var(--desfoque-fundo));
+  -webkit-backdrop-filter: blur(var(--desfoque-fundo));
+}
+
+.chat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.055), transparent 66%);
+}
+
+.avatar-wrap {
+  position: relative;
+  z-index: 2;
+  width: var(--tamanho-avatar);
+  height: var(--tamanho-avatar);
+  flex: 0 0 var(--tamanho-avatar);
+  margin-right: calc(0px - var(--encaixe-avatar));
+  overflow: hidden;
+  border: 2px solid var(--user-color);
+  border-radius: var(--raio-avatar);
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.25), transparent 34%),
+    linear-gradient(145deg, var(--user-color), #121522);
+  box-shadow:
+    0 0 var(--intensidade-glow) var(--cor-glow),
+    0 7px 18px rgba(0, 0, 0, 0.46);
+  isolation: isolate;
+}
+
+.avatar-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.avatar-image,
+.avatar-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-image {
+  z-index: 2;
+  display: block;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.avatar-fallback {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: var(--cor-fallback);
+  font-size: clamp(18px, 4vw, 28px);
+  font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+.chat-entry.avatar-ready .avatar-image {
+  opacity: 1;
+}
+
+.chat-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  line-height: 1.1;
+}
+
+.badges {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  margin-left: 7px;
+}
+
+.badges:empty {
+  display: none;
+}
+
+.badge,
+.badges img {
+  display: inline-block;
+  width: auto;
+  height: var(--largura-badge);
+  max-width: calc(var(--largura-badge) * 1.3);
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.name {
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--tamanho-nome);
+  font-weight: 850;
+  line-height: 1.18;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+  text-shadow: none;
+}
+
+.message {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--espaco-nome-mensagem);
+  color: var(--cor-mensagem);
+  font-size: var(--tamanho-mensagem);
+  font-weight: 560;
+  line-height: 1.36;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Mantém o tratamento de emotes fornecido pelo Chat Box. */
+#log .emote {
+  position: relative;
+  display: inline-block;
+  min-width: 1.08em;
+  padding: 0.3em 0.12em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+#log .emote img {
+  display: inline-block;
+  height: 1em;
+  opacity: 0;
+}
+
+.message > img {
+  width: auto;
+  max-height: 1.18em;
+  vertical-align: middle;
+}
+
+/* A Streamlabs adiciona .deleted quando uma mensagem é removida/moderada. */
+#log > .deleted {
+  display: none !important;
+}
+
+/* Estado ativado pela chave MOSTRAR_AVATAR no JavaScript. */
+.avatar-disabled #log > .chat-entry {
+  display: block;
+}
+
+.avatar-disabled .avatar-wrap {
+  display: none;
+}
+
+.avatar-disabled .chat-card {
+  min-height: 0;
+  padding-left: var(--espacamento-card-horizontal);
+}
+
+@keyframes np-enter {
+  0% {
+    opacity: 0;
+    transform: translate3d(-28px, 12px, 0) scale(0.97);
+    filter: blur(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes np-exit {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(18px, -5px, 0) scale(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #log > .chat-entry {
+    animation:
+      np-enter-reduced 1ms linear both,
+      np-exit-reduced 1ms linear {message_hide_delay} forwards;
+  }
+}
+
+@keyframes np-enter-reduced {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes np-exit-reduced {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

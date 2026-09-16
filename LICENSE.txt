@@ -1,0 +1,147 @@
+NEON PERSONA — LICENÇA DE USO GRATUITO COM RESTRIÇÕES
+
+Versão da licença: 1.0
+Identificador de autoria: GDS-NP-2026-4C1A7E
+Copyright © 2026 Leonardo — Guia do Streamer. Todos os direitos reservados.
+Criado por Leonardo do Guia do Streamer com ajuda de Inteligência Artificial.
+
+
+1. OBJETO E ESCOPO
+
+Esta licença aplica-se ao projeto Neon Persona, identificado pelo código
+GDS-NP-2026-4C1A7E, incluindo seu HTML, CSS, JavaScript, documentação,
+identidade visual e demais arquivos disponibilizados em seu repositório ou
+publicação oficial.
+
+Este é um projeto de código-fonte disponível para uso gratuito sob condições.
+Ele não é software de domínio público e não é distribuído sob uma licença de
+código aberto que autorize livre redistribuição.
+
+
+2. USO PERMITIDO
+
+É permitido:
+
+a) usar gratuitamente o Neon Persona em transmissões ao vivo, gravações e
+conteúdos próprios;
+
+b) utilizar o widget em canais pessoais, monetizados ou comerciais;
+
+c) instalar o widget em uma conta própria do Chat Box e exibi-lo no OBS
+Studio, Streamlabs Desktop, Meld Studio, PRISM Live Studio ou outro software
+compatível com fonte de navegador;
+
+d) personalizar cores, tamanhos, textos, espaçamentos, aparência e código para
+uso próprio; e
+
+e) exibir o widget funcionando em vídeos, capturas de tela e materiais de
+divulgação da própria transmissão.
+
+
+3. REDISTRIBUIÇÃO NÃO PERMITIDA
+
+Sem autorização prévia e escrita de Leonardo — Guia do Streamer, não é
+permitido:
+
+a) redistribuir, republicar, compartilhar ou disponibilizar os arquivos para
+download fora do repositório ou da publicação oficial;
+
+b) criar repositórios espelho, páginas alternativas de download, reuploads,
+packs, coleções ou pacotes que contenham o projeto;
+
+c) vender, revender, alugar, sublicenciar ou incluir o projeto em outro
+produto, serviço, curso ou benefício, gratuito ou pago;
+
+d) publicar versões modificadas ou derivadas para distribuição;
+
+e) publicar partes substanciais do código como se fossem uma criação
+independente;
+
+f) remover, ocultar ou adulterar créditos, avisos de licença ou o identificador
+GDS-NP-2026-4C1A7E; ou
+
+g) apresentar o projeto, o código ou o visual como criação própria.
+
+
+4. PERSONALIZAÇÕES PARA USO PRÓPRIO
+
+Modificações para uso próprio são permitidas. Alterar cores, nomes, tamanhos,
+layout ou partes do código não concede automaticamente o direito de publicar,
+redistribuir, vender ou doar a versão modificada.
+
+Uma versão modificada continua sujeita a esta licença quando incorporar de
+forma substancial o código ou a identidade visual específica do Neon Persona.
+
+
+5. COMPARTILHAMENTO CORRETO
+
+Para indicar o Neon Persona a outra pessoa, compartilhe o link do repositório
+ou da publicação oficial do Guia do Streamer em vez de reenviar os arquivos.
+
+O acesso público ao repositório não concede permissão adicional para reupload,
+espelhamento, revenda, mudança de autoria ou redistribuição externa.
+
+
+6. GITHUB
+
+Quando este projeto estiver hospedado em um repositório público no GitHub, as
+funcionalidades e permissões concedidas pelos próprios Termos de Serviço do
+GitHub, incluindo visualização e funcionalidades de fork disponíveis na
+plataforma, permanecem sujeitas aos Termos do GitHub.
+
+Esta licença não concede permissão adicional para redistribuição externa do
+projeto.
+
+
+7. SERVIÇOS E DIREITOS DE TERCEIROS
+
+O projeto utiliza o Chat Box da Streamlabs, a Twitch e a DecAPI e pode ser
+exibido por softwares compatíveis com fonte de navegador. Esses serviços,
+softwares, nomes e marcas pertencem aos respectivos titulares e permanecem
+sujeitos a seus próprios termos, limites, disponibilidade e políticas.
+
+O projeto envia à DecAPI somente o username público da Twitch para resolver a
+URL pública do avatar. Esta licença não concede direitos sobre marcas ou
+materiais de terceiros e não implica parceria, patrocínio ou endosso oficial.
+
+
+8. IDENTIFICAÇÃO DE AUTORIA
+
+O identificador GDS-NP-2026-4C1A7E e o código curto 4c1a7e relacionam esta
+licença à edição original do Neon Persona. Eles não coletam informações, não
+rastreiam usuários e não funcionam como DRM.
+
+Os créditos presentes no HTML, CSS, JavaScript e documentação, juntamente com
+o histórico oficial de commits, tags, releases e datas de publicação, podem
+ser utilizados para registrar a origem e a evolução do projeto.
+
+
+9. AUSÊNCIA DE GARANTIA
+
+O projeto é fornecido gratuitamente e no estado em que se encontra, sem
+garantias de funcionamento contínuo, compatibilidade futura ou suporte
+obrigatório.
+
+Alterações realizadas pelo Chat Box, Twitch, DecAPI, softwares de transmissão
+ou navegadores integrados podem afetar o funcionamento do widget. O autor não
+se responsabiliza por mudanças, indisponibilidades ou bloqueios realizados por
+esses serviços.
+
+
+10. ENCERRAMENTO DA LICENÇA
+
+O descumprimento destas condições encerra automaticamente a permissão de uso,
+sem prejuízo das medidas cabíveis para proteção dos direitos relacionados ao
+projeto.
+
+
+11. AUTORIZAÇÕES ADICIONAIS
+
+Qualquer permissão que não esteja expressamente concedida neste documento
+depende de autorização prévia e escrita de Leonardo — Guia do Streamer.
+
+
+Projeto: Neon Persona
+Identificador: GDS-NP-2026-4C1A7E
+Responsável: Leonardo — Guia do Streamer
+Copyright © 2026. Todos os direitos reservados.
