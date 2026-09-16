@@ -116,18 +116,7 @@ O guia atual da própria Streamlabs para instalar e configurar o widget está em
 
 ## Onde funciona
 
-O Neon Persona funciona diretamente em programas capazes de carregar uma URL como fonte web. O nome do recurso muda, mas a lógica é a mesma:
-
-| Programa | Como usar |
-| --- | --- |
-| **OBS Studio** | Adicione **Fonte de navegador / Browser Source**, cole a URL e use `620 × 900 px` nas propriedades. Consulte a [documentação oficial do OBS](https://obsproject.com/kb/browser-source). |
-| **Streamlabs Desktop** | Adicione **Browser Source** e cole a URL. Consulte o [guia oficial da Streamlabs](https://streamlabs.com/content-hub/post/introducing-browser-source-interaction-for-streamlabs-desktop). |
-| **Meld Studio** | Adicione uma camada **Browser** ou cole a URL diretamente no canvas. Consulte a [documentação oficial do Meld](https://meldstudio.co/docs/layers/). |
-| **PRISM Live Studio** | No Desktop, use **Browser Capture**; no Mobile, use o **Web Browser Widget**. Consulte os guias oficiais do [PRISM Desktop](https://guide.prismlive.com/desktop/guides/getting-started-with-prism-desktop) e [PRISM Mobile](https://guide.prismlive.com/mobile/guides/widgets-and-effects/web-widget/using-web-browser-widget). |
-| **StreamYard** | Abra a URL em uma aba do Chrome e use **Apresentar > Compartilhar tela > Aba do Chrome**. Para sobrepor o chat livremente sobre toda a cena, componha antes no OBS e envie o resultado ao StreamYard por câmera virtual. Consulte o [guia oficial de compartilhamento de tela](https://support.streamyard.com/hc/en-us/articles/360043726731-Share-a-Screen). |
-| **Outros programas** | Funciona quando o aplicativo aceita uma URL em uma fonte de navegador, fonte web, browser layer ou recurso equivalente. |
-
-No StreamYard, o compartilhamento de uma aba entra como conteúdo apresentado e não oferece o mesmo posicionamento livre de uma Browser Source do OBS. Por isso, a câmera virtual é a opção indicada quando você quer o chat realmente sobreposto ao layout.
+Onde funciona: OBS Studio, Streamlabs, PRISM Live, Meld Studio e qualquer outro aplicativo de transmissão ao vivo que aceite uma URL, um link ou uma fonte de navegador.
 
 ## Personalização rápida
 
