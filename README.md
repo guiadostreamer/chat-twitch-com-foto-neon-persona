@@ -192,17 +192,6 @@ Ative badges, emotes de terceiros e o tempo de ocultação desejado nas configur
 5. **Follow, sub, bits e raid não são alertas deste projeto.** Nenhuma dessas notificações foi implementada aqui. Configure-as separadamente no **Alert Box** da Streamlabs caso queira exibi-las.
 6. **O teste final precisa ocorrer na sua conta.** Arquivos locais não recebem eventos reais da Twitch. Use o teste do painel e depois confirme com mensagens, badges e moderação reais antes da primeira live.
 
-## Teste recomendado antes da live
-
-- Envie mensagens com duas contas Twitch diferentes.
-- Repita mensagens com a mesma conta e confirme que o avatar reaparece.
-- Teste uma mensagem com emote e outra de uma conta com badge.
-- Exclua uma mensagem pela moderação para confirmar que ela some do overlay.
-- Defina um tempo curto de ocultação temporariamente e confirme o fade de saída.
-- Desative `MOSTRAR_AVATAR`, salve e confirme o layout sem foto.
-- Confirme que a Fonte de navegador continua em `620 × 900 px` e sem cortes acidentais.
-- Volte ao tempo de ocultação e aos tamanhos de texto usados na sua cena antes da live.
-
 ## Escopo
 
 Este pacote personaliza somente o **Chat Box da Twitch**. Ele não é um Alert Box, não substitui o chat da Twitch e não cria eventos que a Streamlabs não entregar.
