@@ -6,13 +6,25 @@ Chat Box premium, gratuito e exclusivo para **Twitch**, com avatar real do espec
 
 **Uso gratuito** · **Avatar real** · **Twitch-only** · **Badges e emotes nativos** · **Cores fáceis de trocar** · **Não exige Streamlabs Desktop**
 
-[Configuração](#configuração-do-widget) · [Onde funciona](#onde-funciona) · [Personalização](#personalização-rápida) · [Avatar e privacidade](#avatar-e-privacidade) · [Limitações](#limitações-técnicas-reais) · [Licença](LICENSE.txt)
+[Vídeo](#tutorial-em-vídeo) · [Configuração](#configuração-do-widget) · [Onde funciona](#onde-funciona) · [Personalização](#personalização-rápida) · [Avatar e privacidade](#avatar-e-privacidade) · [Limitações](#limitações-técnicas-reais) · [Licença](LICENSE.txt)
 
 ## Teste real do widget
 
+### Em fundo claro
+
 ![Preview final do Neon Persona com avatares reais, badges, emotes, cores dos usuários e nomes sem blur retangular](assets/neon-persona-preview.png)
 
-*Captura final validada do widget. Os avatares foram resolvidos corretamente pela DecAPI; badges, emotes, cores dos nomes e mensagens foram preservados pelo Chat Box. O neon permanece nos cards e avatares, enquanto os nomes aparecem limpos, sem fundo ou blur retangular.*
+### Em fundo preto
+
+![Preview do Neon Persona funcionando sobre fundo preto](assets/neon-persona-preview-fundo-preto.png)
+
+*Capturas reais e validadas do widget em fundos claro e preto. Os avatares foram resolvidos corretamente pela DecAPI; badges, emotes, cores dos nomes e mensagens foram preservados pelo Chat Box. O neon permanece nos cards e avatares, enquanto os nomes aparecem limpos, sem fundo ou blur retangular.*
+
+## Tutorial em vídeo
+
+[![Assista ao tutorial completo do Neon Persona: Chat com Foto do Espectador](assets/video-chat-twitch-com-foto.png)](https://youtu.be/fKLUJ9zP0d0)
+
+**[Clique na imagem para assistir ao tutorial completo no YouTube.](https://youtu.be/fKLUJ9zP0d0)**
 
 > Criado por Leonardo do Guia do Streamer com ajuda de IA.
 
@@ -44,14 +56,17 @@ O uso do pacote está sujeito à licença gratuita com restrições incluída em
 
 ## Arquivos
 
-| Arquivo | Onde colar |
+| Arquivo | Finalidade |
 | --- | --- |
 | `neon-persona.html` | Campo **HTML** do Chat Box |
 | `neon-persona.css` | Campo **CSS** do Chat Box |
 | `neon-persona.js` | Campo **JS** do Chat Box |
 | `README.md` | Instruções e condições de uso |
 | `LICENSE.txt` | Licença gratuita de uso com restrições |
-| `assets/neon-persona-preview.png` | Preview oficial do projeto |
+| `assets/neon-persona-preview.png` | Preview real do widget em fundo claro |
+| `assets/neon-persona-preview-fundo-preto.png` | Preview real do widget em fundo preto |
+| `assets/video-chat-twitch-com-foto.png` | Capa clicável do tutorial em vídeo |
+| `assets/neon-persona-demo-ficticio.png` | Demonstração visual com mensagens fictícias |
 
 ## Identificação de autoria
 
