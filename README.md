@@ -79,7 +79,23 @@ Não remova ou adultere o crédito, o identificador de autoria ou os avisos de l
 6. Substitua o conteúdo do campo JS pelo conteúdo completo de `neon-persona.js`.
 7. Salve as configurações e teste primeiro pelo painel da Streamlabs.
 8. Copie a **URL do widget** gerada no painel.
-9. No seu programa de transmissão, adicione uma **Fonte de navegador**, **Browser**, **Browser Capture** ou equivalente e cole a URL. Um ponto de partida confortável é `520 × 700 px`; ajuste conforme a sua cena.
+9. No seu programa de transmissão, adicione uma **Fonte de navegador**, **Browser**, **Browser Capture** ou equivalente e cole a URL. Use `620 × 900 px`, configuração testada e validada no OBS Studio para o preset extragrande desta versão.
+
+### Configuração validada no OBS Studio
+
+Abra as **Propriedades** da Fonte de navegador e configure:
+
+| Opção | Valor recomendado |
+| --- | --- |
+| Largura | `620 px` |
+| Altura | `900 px` |
+| URL | URL do widget gerada pela Streamlabs |
+
+Esses valores pertencem às **Propriedades da Fonte de navegador**. Não é necessário usar `1920 × 1080` só porque a transmissão está nessa resolução.
+
+Depois de salvar as propriedades, selecione a fonte e use **Transformar > Redefinir transformação** (`Ctrl+R`) para remover escalas antigas. Em **Editar transformação** (`Ctrl+E`), mantenha **Limites: Automático** e todos os cortes — esquerda, direita, cima e baixo — em `0`.
+
+Posicione e dimensione a fonte na cena preservando a proporção. Evite ampliar excessivamente uma fonte pequena pelas alças, pois isso causa perda de nitidez. Se precisar eliminar apenas uma sobra transparente, recorte a borda segurando `Alt`. Deixe uma pequena margem nas laterais e na parte inferior para o avatar, o glow e a última mensagem não serem cortados.
 
 O guia atual da própria Streamlabs para instalar e configurar o widget está em [Como configurar o Chat Box](https://support.streamlabs.com/hc/en-us/articles/52815318480283-How-to-Set-Up-a-Chat-Box-Overlay).
 
@@ -89,7 +105,7 @@ O Neon Persona funciona diretamente em programas capazes de carregar uma URL com
 
 | Programa | Como usar |
 | --- | --- |
-| **OBS Studio** | Adicione **Fonte de navegador / Browser Source** e cole a URL. Consulte a [documentação oficial do OBS](https://obsproject.com/kb/browser-source). |
+| **OBS Studio** | Adicione **Fonte de navegador / Browser Source**, cole a URL e use `620 × 900 px` nas propriedades. Consulte a [documentação oficial do OBS](https://obsproject.com/kb/browser-source). |
 | **Streamlabs Desktop** | Adicione **Browser Source** e cole a URL. Consulte o [guia oficial da Streamlabs](https://streamlabs.com/content-hub/post/introducing-browser-source-interaction-for-streamlabs-desktop). |
 | **Meld Studio** | Adicione uma camada **Browser** ou cole a URL diretamente no canvas. Consulte a [documentação oficial do Meld](https://meldstudio.co/docs/layers/). |
 | **PRISM Live Studio** | No Desktop, use **Browser Capture**; no Mobile, use o **Web Browser Widget**. Consulte os guias oficiais do [PRISM Desktop](https://guide.prismlive.com/desktop/guides/getting-started-with-prism-desktop) e [PRISM Mobile](https://guide.prismlive.com/mobile/guides/widgets-and-effects/web-widget/using-web-browser-widget). |
@@ -113,6 +129,7 @@ Nela você pode alterar, sem procurar regras espalhadas pelo arquivo:
 - fundo do card;
 - tamanho e raio do avatar;
 - raio do card;
+- largura mínima e máxima dos cards;
 - tamanho do nome;
 - tamanho da mensagem;
 - espaçamento interno e entre mensagens.
@@ -183,7 +200,8 @@ Consulte também a [documentação da DecAPI](https://documentation.decapi.dev/)
 - Exclua uma mensagem pela moderação para confirmar que ela some do overlay.
 - Defina um tempo curto de ocultação temporariamente e confirme o fade de saída.
 - Desative `MOSTRAR_AVATAR`, salve e confirme o layout sem foto.
-- Volte ao tempo de ocultação e tamanho de fonte usados na sua cena antes da live.
+- Confirme que a Fonte de navegador continua em `620 × 900 px` e sem cortes acidentais.
+- Volte ao tempo de ocultação e aos tamanhos de texto usados na sua cena antes da live.
 
 ## Escopo
 
