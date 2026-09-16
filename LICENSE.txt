@@ -95,14 +95,12 @@ projeto.
 
 7. SERVIÇOS E DIREITOS DE TERCEIROS
 
-O projeto utiliza o Chat Box da Streamlabs, a Twitch e a DecAPI e pode ser
-exibido por softwares compatíveis com fonte de navegador. Esses serviços,
-softwares, nomes e marcas pertencem aos respectivos titulares e permanecem
-sujeitos a seus próprios termos, limites, disponibilidade e políticas.
-
-O projeto envia à DecAPI somente o username público da Twitch para resolver a
-URL pública do avatar. Esta licença não concede direitos sobre marcas ou
-materiais de terceiros e não implica parceria, patrocínio ou endosso oficial.
+O projeto utiliza o Chat Box da Streamlabs, a Twitch e recursos externos, além
+de poder ser exibido por softwares compatíveis com fonte de navegador. Esses
+serviços, softwares, nomes e marcas pertencem aos respectivos titulares e
+permanecem sujeitos a seus próprios termos, limites, disponibilidade e
+políticas. Esta licença não concede direitos sobre marcas ou materiais de
+terceiros e não implica parceria, patrocínio ou endosso oficial.
 
 
 8. IDENTIFICAÇÃO DE AUTORIA
@@ -122,10 +120,10 @@ O projeto é fornecido gratuitamente e no estado em que se encontra, sem
 garantias de funcionamento contínuo, compatibilidade futura ou suporte
 obrigatório.
 
-Alterações realizadas pelo Chat Box, Twitch, DecAPI, softwares de transmissão
-ou navegadores integrados podem afetar o funcionamento do widget. O autor não
-se responsabiliza por mudanças, indisponibilidades ou bloqueios realizados por
-esses serviços.
+Alterações realizadas pelo Chat Box, Twitch, recursos externos, softwares de
+transmissão ou navegadores integrados podem afetar o funcionamento do widget.
+O autor não se responsabiliza por mudanças, indisponibilidades ou bloqueios
+realizados por esses serviços.
 
 
 10. ENCERRAMENTO DA LICENÇA

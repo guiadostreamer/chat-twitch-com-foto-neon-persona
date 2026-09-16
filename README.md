@@ -6,7 +6,7 @@ Chat Box premium, gratuito e exclusivo para **Twitch**, com avatar real do espec
 
 **Uso gratuito** · **Avatar real** · **Twitch-only** · **Badges e emotes nativos** · **Cores fáceis de trocar** · **Não exige Streamlabs Desktop**
 
-[Vídeo](#tutorial-em-vídeo) · [Configuração](#configuração-do-widget) · [Onde funciona](#onde-funciona) · [Personalização](#personalização-rápida) · [Avatar e privacidade](#avatar-e-privacidade) · [Limitações](#limitações-técnicas-reais) · [Licença](LICENSE.txt)
+[Vídeo](#tutorial-em-vídeo) · [Configuração](#configuração-do-widget) · [Onde funciona](#onde-funciona) · [Personalização](#personalização-rápida) · [Limitações](#limitações-técnicas-reais) · [Licença](LICENSE.txt)
 
 ## Teste real do widget
 
@@ -18,7 +18,7 @@ Chat Box premium, gratuito e exclusivo para **Twitch**, com avatar real do espec
 
 ![Preview do Neon Persona funcionando sobre fundo preto](assets/neon-persona-preview-fundo-preto.png)
 
-*Capturas reais e validadas do widget em fundos claro e preto. Os avatares foram resolvidos corretamente pela DecAPI; badges, emotes, cores dos nomes e mensagens foram preservados pelo Chat Box. O neon permanece nos cards e avatares, enquanto os nomes aparecem limpos, sem fundo ou blur retangular.*
+*Capturas reais e validadas do widget em fundos claro e preto. Os avatares, badges, emotes, cores dos nomes e mensagens foram exibidos corretamente. O neon permanece nos cards e avatares, enquanto os nomes aparecem limpos, sem fundo ou blur retangular.*
 
 ## Tutorial em vídeo
 
@@ -165,8 +165,8 @@ No começo de `neon-persona.js`, altere esta chave:
 const MOSTRAR_AVATAR = true;
 ```
 
-- `true`: mostra o avatar e consulta a DecAPI;
-- `false`: remove o espaço do avatar e não faz consultas à DecAPI.
+- `true`: mostra e carrega o avatar;
+- `false`: oculta o avatar e remove o espaço reservado para a foto.
 
 ## O que continua sendo nativo do Chat Box
 
@@ -183,29 +183,14 @@ Por isso, permanecem sob responsabilidade do Chat Box:
 
 Ative badges, emotes de terceiros e o tempo de ocultação desejado nas configurações do próprio Chat Box. O visual preserva o que a Streamlabs efetivamente entregar, mas não pode fabricar um badge ou emote ausente no payload.
 
-## Avatar e privacidade
-
-Para resolver a foto, o widget envia à DecAPI **somente o username público da Twitch** presente na mensagem:
-
-```text
-https://decapi.me/twitch/avatar/{username}/
-```
-
-A resposta de texto contém a URL pública do avatar da Twitch. O widget não envia a mensagem, badges, ID da conta, token, e-mail nem qualquer credencial à DecAPI.
-
-O resultado válido fica em cache por username durante toda a sessão do widget. Se a mesma pessoa enviar várias mensagens, todas reutilizam a consulta já concluída. Quando uma consulta falha, o widget tenta novamente de forma controlada e guarda a falha por apenas alguns segundos, evitando tanto o bloqueio permanente do avatar quanto uma sequência excessiva de requisições.
-
-Consulte também a [documentação da DecAPI](https://documentation.decapi.dev/) e a página oficial sobre [cache dos endpoints](https://documentation.decapi.dev/cached-endpoints/).
-
 ## Limitações técnicas reais
 
-1. **A DecAPI é externa.** Se estiver fora do ar, lenta, limitada, mudar o formato da resposta ou deixar de aceitar requisições do ambiente web usado pelo widget, o avatar real não aparecerá. A mensagem continua normalmente com um fallback circular usando a inicial do username.
-2. **Há limites e cache no serviço.** A documentação da DecAPI informa limite geral de `100` requisições a rotas Twitch por `60` segundos por IP e cache de aproximadamente `30` minutos para avatar. Em um chat com muitos usuários inéditos, o limite pode ser atingido; uma troca recente de avatar também pode demorar a aparecer.
-3. **A foto chega de forma assíncrona.** Em uma primeira mensagem, o fallback pode aparecer por um instante antes de a imagem terminar de carregar.
-4. **Twitch-only depende da seleção no painel.** O template renderiza as mensagens que o Chat Box entregar. Para garantir exclusividade Twitch, desative as demais plataformas nas configurações do widget.
-5. **Badges, emotes, exclusões e entrega dependem da Streamlabs/Twitch.** O projeto preserva a mecânica recebida, mas não controla indisponibilidades, mudanças de payload, filtros de moderação ou falhas dos serviços.
-6. **Follow, sub, bits e raid não são alertas deste projeto.** Nenhuma dessas notificações foi implementada aqui. Configure-as separadamente no **Alert Box** da Streamlabs caso queira exibi-las.
-7. **O teste final precisa ocorrer na sua conta.** Arquivos locais não recebem eventos reais da Twitch. Use o teste do painel e depois confirme com mensagens, badges e moderação reais antes da primeira live.
+1. **O carregamento do avatar depende de recursos externos.** Se eles estiverem indisponíveis, o avatar real pode não aparecer. A mensagem continua normalmente com um fallback circular usando a inicial do username.
+2. **A foto chega de forma assíncrona.** Em uma primeira mensagem, o fallback pode aparecer por um instante antes de a imagem terminar de carregar.
+3. **Twitch-only depende da seleção no painel.** O template renderiza as mensagens que o Chat Box entregar. Para garantir exclusividade Twitch, desative as demais plataformas nas configurações do widget.
+4. **Badges, emotes, exclusões e entrega dependem da Streamlabs/Twitch.** O projeto preserva a mecânica recebida, mas não controla indisponibilidades, mudanças de payload, filtros de moderação ou falhas dos serviços.
+5. **Follow, sub, bits e raid não são alertas deste projeto.** Nenhuma dessas notificações foi implementada aqui. Configure-as separadamente no **Alert Box** da Streamlabs caso queira exibi-las.
+6. **O teste final precisa ocorrer na sua conta.** Arquivos locais não recebem eventos reais da Twitch. Use o teste do painel e depois confirme com mensagens, badges e moderação reais antes da primeira live.
 
 ## Teste recomendado antes da live
 
